@@ -23,4 +23,4 @@ jobs:
       run: docker build -t krwiskow/docker-react -f Dockerfile.dev .
       
     - name: Run the test image
-      run: docker run krwiskow/docker-react npm run test -- --coverage
+      run: docker run CI=true krwiskow/docker-react npm run test -- --coverage
