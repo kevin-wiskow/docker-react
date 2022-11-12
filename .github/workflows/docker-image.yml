@@ -14,6 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: login to docker
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_KEY }}
     - name: Build the Docker image
       run: docker build -t krwiskow/docker-react -f Dockerfile.dev .
       
